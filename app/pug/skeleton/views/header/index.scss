@@ -1,0 +1,85 @@
+/* ==============================
+# Header
+ ================================ */
+.header {
+	&__nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	&__logo {
+		max-width: 50px; // change
+	}
+
+	&__burger {
+		//media
+		@include mq(xl) {
+			display: none;
+		}
+	}
+
+	&__menu {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100vh;
+		background: colors(black);
+		color: colors(white);
+		transform: translateY(-100%);
+		transition: transform 0.2s;
+		list-style: none;
+		padding-top: 100px; // change
+
+		&.is-open {
+			transform: translateY(0%);
+		}
+
+		//media
+		@include mq(xl) {
+			position: static;
+			transform: translateY(0%);
+			padding: 0;
+			height: auto;
+			width: auto;
+			background: transparent;
+		}
+	}
+}
+
+.menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	//media
+	@include mq(xl) {
+		min-width: 400px; // change
+		max-width: 400px; // change
+
+		width: 100%;
+		justify-content: space-between;
+		flex-direction: row;
+	}
+
+	&__link {
+		display: inline-block;
+		color: colors(white);
+		text-decoration: none;
+		padding: 10px 0; // change
+		//media
+		@include mq(xl) {
+			color: colors(black);
+			padding: 0;
+		}
+
+		&:hover,
+		&:focus {
+		}
+	}
+}

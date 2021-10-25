@@ -1,0 +1,146 @@
+/* ==============================
+# Footer
+ ================================ */
+.footer {
+	position: relative;
+	background: linear-gradient(180deg, #00549a 0%, #20a0c9 81.85%);
+	color: $white;
+	&::after {
+		content: url(/images/dist/aksi/svg/plus.svg);
+		position: absolute;
+		width: 432px;
+		height: 262px;
+		right: 0;
+		top: 22px;
+	}
+}
+
+.footer-top {
+	text-align: center;
+	padding-top: 77px;
+	padding-bottom: 79px;
+	border-bottom: 1px solid #33b1dd;
+	@media (max-width: 750px) {
+		padding-top: 32px;
+		padding-bottom: 44px;
+	}
+	.footer-top__lead {
+		font-weight: 700;
+		font-size: 52px;
+		line-height: 120%;
+		margin-bottom: 7px;
+		@media (max-width: 750px) {
+			font-size: 30px;
+		}
+		.footer-top__lead-color {
+			color: $yellow;
+		}
+	}
+	.footer-top__text {
+		font-size: 20px;
+		line-height: 120%;
+		margin-bottom: 40px;
+	}
+	& .form {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.label:first-child {
+		margin-bottom: 9px;
+	}
+	.button {
+		margin-top: 23px;
+		margin-bottom: 23px;
+	}
+}
+
+.footer-bottom {
+	display: grid;
+	grid-template-columns: 540px 432px 1fr;
+	row-gap: 72px;
+	font-size: 16px;
+	padding: 27px 0;
+	@media (max-width: 750px) {
+		display: inline-block;
+	}
+	&__list {
+		line-height: 40px;
+		
+	}
+	&__item {
+		&:hover, &:focus {
+			color: $yellow;
+		}
+		&:active {
+			color: $orange;
+		}
+	}
+	.copyright {
+		display: flex;
+		flex-wrap: wrap;
+		&__date {
+			order: 1;
+			line-height: 32px;
+		}
+		&__list {
+			margin-left: 50px;
+			line-height: 24px;
+			color: $yellow;
+			.copyright__item:hover,
+			.copyright__item:focus {
+				text-decoration: underline;
+			}
+		}
+	}
+	&__nav {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		max-height: 100px;
+		.footer__nav-item {
+			&:hover, &:focus {
+				color: $yellow;
+			}
+			&:active {
+				color: $orange;
+			}
+		}
+	}
+	.contact {
+		&__text {
+			line-height: 19px;
+			margin-bottom: 4px;
+		}
+		&__tel {
+			display: block;
+			font-weight: 600;
+			font-size: 24px;
+			line-height: 29px;
+			margin-bottom: 7px;
+			&:hover, &:focus {
+				color: $yellow;
+			}
+			&:active {
+				color: $orange;
+			}
+		}
+		&__link {
+			display: flex;
+			align-items: center;
+			line-height: 32px;
+			&::after {
+				content: '';
+				width: 37px;
+				height: 37px;
+				margin-left: 16px;
+				background: url(/images/dist/aksi/svg/whatsapp-footer.svg) no-repeat center;
+			}
+			&:hover, &:focus {
+				color: $yellow;
+			}
+			&:active {
+				color: $orange;
+			}
+		}
+	}
+}

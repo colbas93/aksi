@@ -1,0 +1,21 @@
+/* ==============================
+# Buttons
+ ================================ */
+.button {
+	display: inline-block;
+	text-align: center;
+	outline: none;
+	font-family: $bff;
+	font-weight: $bfw;
+	font-size: $bfz;
+	line-height: $bflh;
+	transition: $anim;
+	border: 0;
+	border: none;
+	text-decoration: none;
+	// Change
+	padding: 20px;
+	&:hover,
+	&:focus {
+	}
+}

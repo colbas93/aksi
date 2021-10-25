@@ -1,0 +1,78 @@
+block variables
+	-
+		var data = {
+			block1: {
+				title: 'Получите <span class="footer-top__lead-color">бесплатную</span> консультацию',
+				text: 'Перезвоним через несколько минут и ответим на ваши вопросы',
+				name: 'Имя:',
+				tel: 'Телефон:',
+				btn: 'Отправить',
+				checkbox: 'Я принимаю условия Пользовательского соглашения и даю свое согласие на обработку моих персональных данных в соответствии с Политикой конфиденциальности',
+			},
+			block2: {
+				list1: ['Обслуживание и администрирование рабочих мест', 'Настройка и обслуживание серверов', 'ИТ-аудит'],
+				list2: ['Организация удаленного доступа', 'Обслуживание офисной техники', 'Администрирование 1С'],
+				list3: ['Защита компьютеров и сетей','IP-телефония и видеонаблюдение','Монтаж и настройка wi-fi'],
+			},
+			block3: {
+				copyright: {
+					date: '2016 - 2021 © AKSi',
+					list: ['Политика конфиденциальности ', 'Пользовательское соглашение']
+				},
+				nav: ['Компания','Услуги и цены','Блог','Отзывы','Контакты'],
+				contact: {
+					text: 'Бесплатный аудит',
+					telAttr: 'tel:+73513453456',
+					telNumber: '+7 (351) 345 34 56',
+					whatsapp: 'Пишите в WhatsApp',
+				},
+			},
+		};
+
+footer.footer
+	.footer-top
+			p.footer-top__lead !{data.block1.title}
+			p.footer-top__text=data.block1.text
+			form.form(action="#", method="POST")
+				label.label
+					input.input(type="text" placeholder=`${data.block1.name}`)
+				label.label
+					input.input(type="tel" placeholder=`${data.block1.tel}`)
+				button.button.button--yellow(type="submit")=data.block1.btn
+				input.checkbox.visually-hidden(type="checkbox" name="checkbox" id="checkbox")
+				label.custom-checkbox(for="checkbox")=data.block1.checkbox
+		
+	.footer-bottom.container
+			ul.footer-bottom__list
+				each i in data.block2.list1
+					li.footer-bottom__item
+						a.footer-bottom__link(href="#")=i
+
+			ul.footer-bottom__list
+				each i in data.block2.list2
+					li.footer-bottom__item
+						a.footer-bottom__link(href="#")=i
+
+			ul.footer-bottom__list
+				each i in data.block2.list3
+					li.footer-bottom__item 
+						a.footer-bottom__link(href="#")=i
+
+			.footer-bottom__copyright.copyright
+				a.logo.footer-bottom__logo(href="#")
+					img.logo__img(src="images/dist/aksi/index/header/logo.png", alt="Logo Aksi")
+				p.copyright__date=data.block3.copyright.date
+				ul.copyright__list 
+					each i in data.block3.copyright.list 
+						li.copyright__item
+							a.copyright__link(href="#")=i
+
+			ul.footer-bottom__nav.footer__nav
+				each i in data.block3.nav
+					li.footer__nav-item
+						a.footer__nav-link(href="#")=i
+
+			.footer-bottom__contact.contact 
+				p.contact__text=data.block3.contact.text
+				a.contact__tel(href="#" tel=`${data.block3.contact.telAttr}`)=data.block3.contact.telNumber
+				a.contact__link(href="#")=data.block3.contact.whatsapp

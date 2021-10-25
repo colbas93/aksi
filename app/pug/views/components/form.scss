@@ -1,0 +1,55 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	max-width: 344px;
+	width: 100%;
+}
+
+.input {
+	display: inline-block;
+	width: 100%;
+	background-color: $white;
+	font-size: inherit;
+	line-height: 120%;
+	color: $gray;
+	padding: 17px 22px;
+	border-radius: 50px;
+}
+
+.textarea {
+	display: inline-block;
+	background-color: $white;
+	color: $gray;
+	padding: 17px 22px;
+	border-radius: 20px;
+}
+
+.custom-checkbox {
+	font-size: 12px;
+	line-height: 14px;
+	color: $white;
+	text-align: left;
+	width: 358px;
+	display: flex;
+	flex-direction: row;
+	padding-left: 33px;
+	position: relative;
+	user-select: none;
+	.checkbox + &::before {
+		content: "";
+		position: absolute;
+		width: 22px;
+		height: 22px;
+		border: 2px solid $brightBlue;
+		border-radius: 4px;
+		left: 0;
+	}
+	.checkbox:checked + &::before {
+		background: url("/images/dist/aksi/svg/checkbox.svg") no-repeat;
+		border: none;
+		border: 0;
+	}
+	.checkbox:focus + &::before {
+		outline: 1px solid $black_200;
+	}
+}

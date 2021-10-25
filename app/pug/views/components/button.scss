@@ -1,0 +1,38 @@
+/* ==============================
+# Buttons
+ ================================ */
+.button {
+	color: $black_200;
+	display: inline-block;
+	text-align: center;
+	line-height: 21.6px;
+	transition: $anim;
+	border: 0;
+	border: none;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	padding-left: 25px;
+	padding-right: 25px;
+	cursor: pointer;
+	border-radius: 50px;
+}
+
+.button--yellow {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 24px;
+	color: $white;
+	background: linear-gradient(99.01deg, #ff9200 4.22%, #ffcc00 108.35%);
+	box-shadow: 0px 4px 5px #ff9200, 0px 10px 15px #1678ac;
+	&:hover, &:focus {
+		color: $black_300;
+	}
+	&:active {
+		box-shadow: none;
+		transform: translateY(5px);
+	}
+}
+
+.button--border {
+	border: 2px solid #c1d0d9;
+}

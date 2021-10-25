@@ -1,0 +1,64 @@
+
+block variables
+	-
+		var data = {
+			list: [
+				{	
+					href: '#',
+					label: 'Компания'
+				},
+				{
+					href: 'catalog.html',
+					label: 'Услуги и цены'
+				},
+				{
+					href: 'catalog.html',
+					label: 'ИТ-аутсорсинг'
+				},
+				{
+					href: 'catalog.html',
+					label: 'Блог'
+				},
+				{
+					href: 'catalog.html',
+					label: 'Контакты'
+				},
+			],
+			link: 'Задать вопрс',
+			text: 'Бесплатный аудит',
+			telAttr: 'tel:+73513453456',
+			telNumber: '+7 (351) 345 34 56',
+			btnSubmit: 'Отправить',
+		};
+
+
+header.header
+	.container
+
+		// Navigation
+		nav.nav.header__nav
+
+			// Logo
+			a.logo.header__logo(href="#")
+				img.logo__img(src="images/dist/aksi/index/header/logo.png", alt="Logo Aksi")
+				
+
+			// Burger
+			button.burger.header__burger(aria-label="Menu")
+				span.burger__line
+
+			// Menu
+			ul.menu.header__menu
+				each i in data.list
+					li.menu__item
+						a.menu__link(href=`${i.href}`)=i.label
+
+			a.header__support(href="")
+				svg.question(width='22', height='22')
+					use(xlink:href="images/dist/aksi/sprite.svg#question")
+				| Задать вопрос
+
+			p.contact.header__contact
+				span.contact__text=data.text
+				a.contact__tel(href=`${data.telAttr}`)=data.telNumber
+

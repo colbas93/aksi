@@ -1,0 +1,74 @@
+/* ==============================
+# Header
+ ================================ */
+.header {
+	background: linear-gradient(180deg, #00549A 0%, #20A0C9 128.47%);
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 28px;
+		padding-bottom: 28px;
+		@media (max-width: 750px) {
+			flex-direction: column;
+		}
+	}
+
+	&__burger {
+		display: none;
+	}
+
+	&__menu {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: $white;
+		@include fontLight(17px, normal, 600, 20.8px);
+		max-width: 556px;
+		width: 100%;
+		.menu__link {
+			&:hover, &:focus {
+				color: $yellow;
+			}
+			&:active {
+				color: $orange;
+			}
+		}
+	}
+
+	&__support {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		color: $yellow;
+		max-width: 156px;
+		width: 100%;
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
+		&:active {
+			color: $orange;
+		}
+	}
+
+	&__contact {
+		color: $white;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		font-weight: 600;
+		& .contact__text {
+			font-size: 14px;
+			line-height: 17.15px;
+		}
+		& .contact__tel {
+			&:hover, &:focus {
+				color: $yellow;
+			}
+			&:active {
+				color: $orange;
+			}
+		}
+
+	}
+}
