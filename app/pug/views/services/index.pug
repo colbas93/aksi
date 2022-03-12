@@ -1,0 +1,193 @@
+block variables
+	-
+		var data = {
+			breadcrumbs: [
+				{
+					item: 'Главная',
+					href: 'index.html'
+				},
+				{
+					item: 'Услуги и стоимость',
+					href: '#'
+				}
+			],
+			title: 'Услуги и стоимость',
+			sectionDesc: 'Статьи и аналитические материалы по теме ИТ, серверов, видео-наблюдения и пр.',
+			filter: [
+				{
+					href: '#',
+					tab: 'Linux-сервер'
+				},
+				{
+					href: '#',
+					tab: 'ИТ-инфрастуктура'
+				},
+				{
+					href: '#',
+					tab: 'Новости ASKi'
+				},
+				{
+					href: '#',
+					tab: 'Видео-наблюдение'
+				},
+				{
+					href: '#',
+					tab: 'Новости ASKi'
+				},
+				{
+					href: '#',
+					tab: 'Видео'
+				},
+			],
+			allView: 'Показать все',
+			cards:[
+				{
+					card:
+						{
+							title: 'Обслуживание и администрирование раб. мест',
+							price: 'от 5 000 ₽/мес.',
+							about: 'Аутсорсинг компьютеров: установка оборудования, настройка программ, интернета, wi-fi, подключение принтеров, диагностика работоспособности...',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: '#',
+							img: 'images/dist/aksi/index/services/services-1.png'
+						}
+				},
+				{
+					card:
+						{
+							title: 'Настройка и обслуживание серверов',
+							price: 'от 10 000 ₽/мес.',
+							about: 'Администрирование серверов и серверных приложений, оптимизация работы оборудования, наблюдение за функционированием сетевых устройств',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: '#',
+							img: 'images/dist/aksi/index/services/services-2.png'
+						}
+				},
+				{
+					card:
+						{
+							title: 'ИТ-аудит',
+							price: 'от 5 000 ₽/мес.',
+							about: 'Экспертная оценка ИТ-инфраструктуры компании для выявления проблем в работе и роста эффективности использования ИТ-систем',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: '#',
+							img: 'images/dist/aksi/index/services/services-3.png'
+						}
+				},
+				{
+					card:
+						{
+							title: 'Организация удаленного доступа',
+							price: 'от 3 000 ₽/мес.',
+							about: 'Настройка подключения и управления несколькими компьютерами с 1 ПК',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: '#',
+							img: 'images/dist/aksi/index/services/services-4.png'
+						}
+				},
+				{
+					card:
+						{
+							title: 'Обслуживание офисной техники',
+							price: 'от 1 500 ₽/мес.',
+							about: 'Подключение принтеров и сканеров, настройка, устранение неисправностей, подмена оборудования в рамках ИТ-обслуживания компаний',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: '#',
+							img: 'images/dist/aksi/index/services/services-5.png'
+						}
+				},
+				{
+					card:
+						{
+							title: 'Администрирование 1С',
+							price: 'от 5 000 ₽/мес.',
+							about: 'Администрирование серверов и серверных приложений, оптимизация работы оборудования, наблюдение за функционированием сетевых устройств',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: 'service.html',
+							img: 'images/dist/aksi/index/services/services-6.png'
+						}
+				},
+				{
+					card:
+						{
+							title: 'Защита компьютеров и сетей',
+							price: 'от 1 000 ₽/мес.',
+							about: 'Подбор, установка и настройка антивирусной программы, обучение сотрудников навыкам безопасной работы в интернете',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: '#',
+							img: 'images/dist/aksi/index/services/services-7.png'
+						}
+				},
+				{
+					card:
+						{
+							title: 'IP-телефония и видеонаблюдение',
+							price: 'от 3 000 ₽/мес.',
+							about: 'Проектирование, монтаж и контроль систем видеонаблюдения. Настройка единой сети телефонии, распределения и учета звонков',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: '#',
+							img: 'images/dist/aksi/index/services/services-8.png'
+						}
+				},
+				{
+					card:
+						{
+							title: 'Монтаж и настройка Wi-fi',
+							price: 'от 3 000 ₽/мес.',
+							about: 'Выберем оборудование спецаильно под параметры вашего помещения. Настроим беспроводную сеть. ',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: '#',
+							img: 'images/dist/aksi/index/services/services-9.png',
+						}
+				},	
+			],
+			sectionText: 'Система видеонаблюдения позволит круглосуточно контролировать имущество и материальные ценности — деньги, документы, автотранспорт. С помощью видеокамер вы сможете выявить уязвимые места дома или другого объекта и предотвратить хищение. в тератек'
+		};
+
+// Section
+section.services.services-individ
+	.container
+		// breadcrumbs
+		ul.breadcrumbs
+			each i in data.breadcrumbs
+				li.breadcrumbs__item
+					a.breadcrumbs__link(href=`${i.href}`)=i.item
+		// Title
+		h2.s-title.services-individ__title=data.title
+		p.services__desc=data.sectionDesc 
+		// Filter
+		.services__filter.filter
+			.filter-desktop
+				ul.filter-desktop__list
+					each tab in data.filter
+						li.filter-desktop__item
+							a.filter-desktop__link.button.button--border(href=`${tab.href}`)=tab.tab
+				a.filter-desktop__allwiew._icon-arrow-blue(href="#")=data.allView
+			form.filter-mobile(action="", method="post")
+				select.filter-mobile__list.choices-menu(name="filter")
+					each f in data.filter
+						option.filter-mobile__item(value=`${f.tab}`)=f.tab
+		// List
+		ul.services__list.grid-3__individ
+				each item in data.cards
+					li.services__slide.services-slide
+						.services__item
+							.services__item-img
+								img(src=`${item.card.img}`, alt=`${item.card.title}`)
+							h3.services__item-title.sub-title=item.card.title
+							p.services__item-price.price-number=item.card.price
+							p.services__item-about=item.card.about
+							.services__item-links 
+								a.services__item-btn.button.button--border(href=`${item.card.href}`)=item.card.button
+								a.services__item-link.link--blue(href=`${item.card.href}`)=item.card.link
+		// Text
+		p.services__text=data.sectionText

@@ -1,0 +1,92 @@
+block variables
+	-
+		var data = {
+			breadcrumbs: [
+				{
+					item: 'Главная',
+					href: 'index.html'
+				},
+				{
+					item: 'Услуги',
+					href: 'services.html'
+				},
+				{
+					item: 'Администрирование 1С',
+					href: '#'
+				}
+			],
+			title: 'Администрирование 1С',
+			about: {
+				text1: 'Выполняем техническое обслуживание компаний — от установки компьютеров до закупки оборудования и прокладки сети. Вместо 1 системного администратора в штате — коллектив из 5 программистов, 3 техников и 4 менеджеров-консультантов. Команда справляется с поставленной задачей в 3 раза быстрее, чем администратор, работающий в одиночку.',
+				text2: 'ИТ-специалисты ALP Group анализируют производительность 1С. Находят «узкие места», которые стали причиной медленной и плохой работы приложения. Предоставляют четкие и подробные рекомендации по тому, как увеличить скорость и надежность работы 1С.',
+				img: 'images/dist/aksi/service/image-1c.png'
+			},
+			features: [
+				{
+					item: {
+						title: 'ИТ перестает быть «черным ящиком».',
+						text: '«Аргус» дает точные ответы на сложные вопросы. Например, в чем причина медленной работы ИС? Это код, платформа, СУБД или сеть? Как ИС будет работать, если мыподключим еще 10 пользователей?',
+					}
+				},
+				{
+					item: {
+						title: 'Расходы на ИТ становятся обоснованными.',
+						text: 'Расчеты связываются с состоянием ИТ в конкретнойкомпании. Что нужно поменять, чтобы повысить скорость ИС? Купить сервер, СХД или перейти в «облако»? Это решит проблемы? Если да, то сколько это будет стоить? И как здесь сэкономить, чтобы не просело качество? «Аргус» дает бизнесу всю нужную информацию.',
+					}
+				},
+				{
+					item: {
+						title: 'ЗЕА поддерживается на уровне 99,9%.',
+						text: 'Время реакции/решения ИТ-инцидентов не нарушается. За счет максимально быстрой и точной диагностики.',
+					}
+				},
+				{
+					item: {
+						title: 'Штатная ИТ-служба становится профессиональнее',
+						text: 'Эксперты АЕР Сгочр, работающие с СЦМК, усиливают ИТ-службу заказчика редкими компетенциями: Ореп 5оигсе, виртуализация, СУБД, оптимизация быстродействия 1С.',
+					}
+				}
+			],
+			covid: {
+				img: 'images/dist/aksi/service/image-covid.jpg',
+				note: 'В связи с распространением коронавируса, нам стали чаще поступать запросы на перевод офисных сотрудников на удалённую работу.',
+				text1: 'Мы поможем настроить ИТ-инфраструктуру так, чтобы Ваши сотрудники работали из дома так же эффективно, как из офиса. Обеспечим безопасность данных.',
+				text2: 'ИТ-специалисты ALP Group анализируют производительность 1С. Находят «узкие места», которые стали причиной медленной и плохой работы приложения. Предоставляют четкие и подробные рекомендации по тому, как увеличить скорость и надежность работы 1С.'
+			}
+		};
+
+// Administration
+section.administration
+	.container
+		// breadcrumbs
+		ul.breadcrumbs
+			each i in data.breadcrumbs
+				li.breadcrumbs__item
+					a.breadcrumbs__link(href=`${i.href}`)=i.item
+		// Title
+		h2.s-title.administration__title=data.title
+		// About
+		.administration__about
+			.administration__about-column
+				p.administration__about-text=data.about.text1
+				p.administration__about-text=data.about.text2
+			.administration__about-column
+				img.administration__about-img(src=`${data.about.img}` alt="")
+		// Features
+		ul.administration__features
+			each i in data.features
+				li.administration__features-item
+					h3.administration__features-title.sub-title=i.item.title
+					p.administration__features-text=i.item.text
+		// Covid
+		.administration__covid
+			.administration__covid-column
+				img.administration__covid-img(src=`${data.covid.img}` alt="")
+			.administration__covid-column
+				p.administration__covid-note._icon-virus=data.covid.note
+				p.administration__covid-text=data.covid.text1
+				p.administration__covid-text=data.covid.text2
+		
+
+
+

@@ -1,0 +1,136 @@
+/* ==============================
+# Contacts
+ ================================ */
+
+.contacts {
+	&__title {
+		margin-bottom: 29px;
+		@media (max-width: 768px) {
+			margin-bottom: 21px;
+		}
+	}
+	// list
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		font-size: 20px;
+		line-height: 28px;
+		@media (max-width: 768px) {
+			font-size: 16px;
+			line-height: 22px;
+		}
+		max-width: 1130px;
+		width: 100%;
+		justify-content: space-between;
+	}
+	&__column {
+		max-width: 320px;
+		width: 100%;
+		padding-left: 35px;
+		position: relative;
+		margin-bottom: 25px;
+	}
+	&__column-icon {
+		position: absolute;
+		font-size: 20px;
+		left: 0;
+		top: 0;
+		color: $orange;
+		&._icon-marker {
+			font-size: 27px;
+		}
+		&._icon-telefon {
+			font-size: 23px;
+		}
+	}
+
+	// column 1
+	&-requisites {
+		display: flex;
+		align-items: center;
+		margin-top: 21px;
+		@media (max-width: 768px) {
+			margin-top: 15px;
+		}
+		&__icon {
+			font-weight: 700;
+			font-size: 14px;
+			line-height: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-right: 13px;
+			width: 51px;
+			height: 24px;
+			border-radius: 6px;
+			background-color: $linkBlue;
+			color: white;
+		}
+		&__text {
+			color: $linkBlue;
+			&:hover {
+				text-decoration: underline;
+			}
+			&:focus,
+			&:active {
+				color: $black_200;
+			}
+		}
+	}
+	// column 2
+	.phone-list {
+		&__item:first-child {
+			margin-bottom: 35px;
+			@media (max-width: 768px) {
+				margin-bottom: 15px;
+			}
+		}
+		&__desc {
+			font-size: 16px;
+			line-height: 22px;
+			@media (max-width: 768px) {
+				font-size: 14px;
+				line-height: 20px;
+			}
+		}
+	}
+	// column 3
+	&__social {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 192px;
+		width: 100%;
+		transform: translateX(-37px);
+		margin-top: 35px;
+		@media (max-width: 768px) {
+			transform: translateX(0);
+			margin-top: 24px;
+		}
+		&-link {
+			width: 48px;
+			height: 48px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		&-item:nth-child(1) &-link {
+			background: url(../images/dist/aksi/svg/viber-icon.svg) no-repeat
+				center;
+			background-color: $purple;
+			border-radius: 50%;
+		}
+		&-item:nth-child(2) &-link {
+			background: url(../images/dist/aksi/svg/whatsapp-icon.svg) no-repeat
+				center;
+			background-color: $green;
+			border-radius: 50%;
+		}
+		&-item:nth-child(3) &-link {
+			background: url(../images/dist/aksi/svg/telegram-icon.svg) no-repeat
+				center;
+			background-color: $paleBlue;
+			border-radius: 50%;
+		}
+	}
+}

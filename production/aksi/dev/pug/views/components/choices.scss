@@ -1,0 +1,45 @@
+/* ==============================
+Choices
+ ================================ */
+
+ .choices__inner {
+	font-size: 18px;
+	line-height: 22px;
+	border-radius: 100px;
+	background-color: $white;
+	padding: 10px 20px;
+	min-height: auto;
+	border: 2px solid #C1D0D9;
+	color: $black_300;
+}
+
+.is-open .choices__inner {
+	border-radius: 22px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-bottom: none;
+}
+
+.choices__list--single {
+	padding: 0;
+}
+
+.is-open .choices__list--dropdown {
+	border: 2px solid #C1D0D9;
+	color: $black_300;
+	border-bottom-left-radius: 22px;
+	border-bottom-right-radius: 22px;
+}
+
+.choices[data-type*=select-one]::after {
+	background: url(../images/dist/aksi/svg/arrow-bottom-black.svg) no-repeat center;
+	border: none;
+	right: 20px;
+	width: 16px;
+	height: 9px;
+}
+
+.choices[data-type*=select-one].is-open::after {
+	margin-top: -4.5px;
+	transform: rotate(180deg);
+}

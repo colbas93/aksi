@@ -1,0 +1,243 @@
+/* ==============================
+🟠 Include font family
+ ================================ */
+@mixin font($fname, $fstyle, $fweight, $furl) {
+	@font-face {
+		font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		src: local($fname), url($furl) format("woff2");
+		font-display: swap; // Uncomment to initially display system fonts
+	}
+}
+
+@mixin fontLight($fsize, $fstyle, $fweight, $lineheight) {	
+	font-size: $fsize;
+	font-style: $fstyle;
+	font-weight: $fweight;
+	line-height: $lineheight;	
+	font-display: swap; // Uncomment to initially display system fonts
+}
+
+/* ==============================
+🟠 Fluid values
+ ================================ */
+@function list-remove($list, $index) {
+	$newList: ();
+
+	@for $i from 1 through length($list) {
+		@if $i !=$index {
+			$newList: append($newList, nth($list, $i), "space");
+		}
+	}
+
+	@return $newList;
+}
+@function list-sort($list) {
+	$sortedlist: ();
+
+	@while length($list) >0 {
+		$value: nth($list, 1);
+
+		@each $item in $list {
+			@if $item < $value {
+				$value: $item;
+			}
+		}
+
+		$sortedlist: append($sortedlist, $value, "space");
+		$list: list-remove($list, index($list, $value));
+	}
+
+	@return $sortedlist;
+}
+@function map-sort($map) {
+	$keys: list-sort(map-keys($map));
+	$sortedMap: ();
+
+	@each $key in $keys {
+		$sortedMap: map-merge(
+			$sortedMap,
+			(
+				$key: map-get($map, $key),
+			)
+		);
+	}
+
+	@return $sortedMap;
+}
+@function linear-interpolation($map) {
+	$keys: map-keys($map);
+
+	@if (length($keys) !=2) {
+		@error "linear-interpolation() $map must be exactly 2 values";
+	}
+
+	$m: (map-get($map, nth($keys, 2)) - map-get($map, nth($keys, 1)))/ (nth(
+					$keys,
+					2
+				) - nth($keys, 1));
+
+	$b: map-get($map, nth($keys, 1)) - $m * nth($keys, 1);
+
+	$sign: "+";
+
+	@if ($b < 0) {
+		$sign: "-";
+		$b: abs($b);
+	}
+
+	@return calc(#{$m * 100}vw #{$sign} #{$b});
+}
+@mixin fluid($property, $map) {
+	$length: length(map-keys($map));
+
+	@if ($length < 2) {
+		@error "poly-fluid-sizing() $map requires at least values";
+	}
+
+	$map: map-sort($map);
+	$keys: map-keys($map);
+	#{$property}: map-get($map, nth($keys, 1));
+
+	@for $i from 1 through ($length - 1) {
+		@media (min-width: nth($keys, $i)) {
+			$value1: map-get($map, nth($keys, $i));
+			$value2: map-get($map, nth($keys, ($i + 1)));
+
+			@if ($value1 !=$value2) {
+				#{$property}: linear-interpolation(
+					(
+						nth($keys, $i): $value1,
+						nth($keys, ($i + 1)): $value2,
+					)
+				);
+			} @else {
+				#{$property}: $value1;
+			}
+		}
+	}
+
+	@media (min-width: nth($keys, $length)) {
+		#{$property}: map-get($map, nth($keys, $length));
+	}
+}
+
+// -----------------------------------------------------------------------------
+// ⚠️ TYPOGRAPHY FLUID
+// -----------------------------------------------------------------------------
+@function strip-unit($number) {
+	@if type-of($number) == "number" and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
+}
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+	$f-min: strip-unit($f-min);
+	$f-max: strip-unit($f-max);
+	$w-min: strip-unit($w-min);
+	$w-max: strip-unit($w-max);
+
+	$k: ($f-max - $f-min)/ ($w-max - $w-min);
+	$b: $f-min - $k * $w-min;
+
+	$b: $b + $units;
+
+	@return calc(#{$k} * 100vw + #{$b});
+}
+@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+	font-size: $f-min;
+
+	@media (min-width: $w-min) {
+		@if ($fallback) {
+			font-size: $fallback;
+		}
+
+		font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+	}
+
+	@media (min-width: $w-max) {
+		font-size: $f-max;
+	}
+}
+
+/* ==============================
+🟠 Breakpoint
+ ================================ */
+$breakpoints: (
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	fhd: 1920px,
+);
+
+@mixin mq($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+			@content;
+		}
+	}
+}
+
+/* ==============================
+🟠 #Horizontal center
+================================ */
+@mixin center-h($position: absolute) {
+	position: $position;
+	left: 50%;
+	content: "";
+	transform: translateX(-50%);
+}
+/* ==============================
+🟠 #Vertical center
+================================ */
+@mixin center-v($position: absolute) {
+	position: $position;
+	top: 50%;
+	content: "";
+	transform: translateY(-50%);
+}
+
+/* ==============================
+🟠 #Vertical/Horizontal center
+================================ */
+@mixin center($position: absolute) {
+	position: $position;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+/* ==============================
+.el-c {
+	@include center();
+}
+
+.el-v {
+	@include center-v();
+}
+
+.el-h {
+	@include center-h();
+}
+ ================================ */
+
+/* ==============================
+🟠 Colors
+  ================================ */
+@function colors($key) {
+	@if map-has-key($colors, $key) {
+		@return map-get($colors, $key);
+	}
+
+	@warn "Unknown `#{$key}` in $colors.";
+	@return null;
+}
+
+/* ==============================
+.el-c {
+	el: colors(black);
+}
+ ================================ */

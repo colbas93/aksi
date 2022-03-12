@@ -1,0 +1,72 @@
+/* ==============================
+#Team
+ ================================ */
+.team {
+	padding-top: 151px;
+	padding-bottom: 89px;
+	@media (max-width: 768px) {
+		padding-top: 35px;
+		padding-bottom: 34px;
+	}
+	&__title {
+		margin-bottom: 70px;
+		@media (max-width: 568px) {
+			padding-left: 17px;
+			margin-bottom: 26px;
+		}
+	}
+	& .container {
+		@media (max-width: 568px) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+	&-card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		&__img-wrapper {
+			width: 203px;
+			height: 203px;
+			border-radius: 50%;
+			overflow: hidden;
+			background-color: rgb(141, 141, 141);
+			& img {
+				max-width: 100%;
+			}
+		}
+		&__name {
+			font-weight: 600;
+			line-height: 22px;
+			margin-top: 16px;
+		}
+		&__position {
+			font-style: italic;
+			font-size: 16px;
+			line-height: 19px;
+			max-width: 190px;
+			width: 100%;
+			margin-top: 6px;
+			color: $lightBlue;
+		}
+	}
+	&__button {
+		background: url(../images/dist/aksi/svg/arrow-right.svg) no-repeat
+			center;
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		background-color: $white;
+		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+		top: 37%;
+		&-prev {
+			transform: rotate(-180deg);
+			box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.15);
+			left: 0;
+		}
+		&-next {
+			right: 0;
+		}
+	}
+}

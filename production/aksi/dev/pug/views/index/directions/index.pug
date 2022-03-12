@@ -1,0 +1,53 @@
+block variables
+	-
+		var data = {
+			title: '3 направления обслуживания компьютеров в Челябинске в «AksiPro»',
+			desc: 'Для результативного и выгодного взаимодействия предлагаем 3 типа технического аутсорсинга. Отличаются объемом вверенных задач и уровнем включенности исполнителей в рабочие процессы заказчика. Выберите тот, который подходит компании',
+			img: 'images/dist/aksi/index/directions/directions-img.jpg',
+			cards: [
+				{
+					card: {
+						cardTitle: 'Полное ИТ-обслуживание компьютеров на постоянной основе',
+						cardNumber: '01',
+						cardPrice: 'от 5 000 ₽/мес.',
+						cardDesc: 'Вариант — для организаций с большим количеством компьютеров, собственным сервером, развитой технической инфраструктурой',
+						cardBtn: 'Заказать'
+					}
+				},
+				{
+					card: {
+						cardTitle: 'Функциональный технический аутсорсинг',
+						cardNumber: '02',
+						cardPrice: 'от 300 ₽/услуга',
+						cardDesc: 'Заключаем договор на выполнение конкретных задач, контролируем и поддерживаем технические процессы в выбранном направлении',
+						cardBtn: 'Заказать'
+					}
+				},
+				{
+					card: {
+						cardTitle: 'ИТ-аутсорсинг компаний по запросу',
+						cardNumber: '03',
+						cardPrice: 'от 500 ₽/услуга',
+						cardDesc: 'Разовые выезды для решения стихийных проблем или найм сотрудника на время отсутствия штатного системного администратора',
+						cardBtn: 'Заказать'
+					}
+				},
+			]
+		};
+
+// Section
+section.directions
+	.container
+		// Title
+		h2.s-title.directions__title=data.title
+		p.directions__desc=data.desc 
+		ul.directions__cards
+			each item in data.cards 
+				li.directions__card.directions-card
+					.directions-card__title-wrapper 
+						h3.directions-card__title.sub-title=item.card.cardTitle
+						span.directions-card__number=item.card.cardNumber
+					p.directions-card__price.price-number=item.card.cardPrice
+					p.directions-card__desc=item.card.cardDesc
+					a.directions-card__btn.button.button--yellow=item.card.cardBtn
+				img.directions__img(src=`${data.img}`, alt='photo')

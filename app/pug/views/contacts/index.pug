@@ -1,0 +1,94 @@
+block variables
+	-
+		var data = { 
+			breadcrumbs: [
+				{
+					item: 'Главная',
+					href: 'index.html'
+				},
+				{
+					item: 'Контакты',
+					href: '#'
+				}
+			],
+			title: 'Контакты',
+			contactsList: {
+				column1: {
+					address: '123022, г. Москва, 2-ая Звенигородская, дом 13, строение 41, 7 этаж',
+					requisites: 'Реквизиты компании',
+					requisitesIcon: 'PDF'
+				},
+				column2: [
+					{
+						row: {
+							phone: '+7 (495) 191-07-98',
+							attr: 'tel:+74951910798',
+							desc: 'По вопросам ИТ обслуживания'
+						}
+					},
+					{
+						row: {
+							phone: '8 800 555-51-51',
+							attr: 'tel:+88005555151',
+							desc: 'Бесплатный телефон для регионов'
+						}
+					}
+				],
+				column3: {
+					mail: 'outsource@alp-itsm.ru',
+					social: [
+						{
+							href: '#'
+						},
+						{
+							href: '#'
+						},
+						{
+							href: '#'
+						}
+					]
+				}
+			}
+		};
+
+.container
+	// Contacts
+	section.contacts
+
+		// breadcrumbs
+		ul.breadcrumbs
+			each i in data.breadcrumbs
+				li.breadcrumbs__item
+					a.breadcrumbs__link(href=`${i.href}`)=i.item
+
+		// Title
+		h2.s-title.contacts__title=data.title
+
+		// contacts
+		ul.contacts__list
+			// column
+			li.contacts__column
+				span.contacts__column-icon._icon-marker
+				a.contacts__address(href="#")=data.contactsList.column1.address
+				a.contacts__requisites.contacts-requisites(href="#")
+					p.contacts-requisites__icon=data.contactsList.column1.requisitesIcon
+					p.contacts-requisites__text=data.contactsList.column1.requisites
+			// column
+			li.contacts__column
+				span.contacts__column-icon._icon-telefon 
+				ul.contact__phone-list.phone-list
+					each phone in data.contactsList.column2 
+						li.phone-list__item 
+							a.phone-list__number(href=`${phone.row.attr}`)=phone.row.phone
+							p.phone-list__desc=phone.row.desc
+			// column
+			li.contacts__column
+				span.contacts__column-icon._icon-mail 
+				a.contacts__mail(href="#")=data.contactsList.column3.mail
+				ul.contacts__social
+					each social in data.contactsList.column3.social 
+						li.contacts__social-item 
+							a.contacts__social-link(href=`${social.href}`)
+// Map
+.map
+	iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.8396942588474!2d37.550477916046574!3d55.76128689880488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54b4b55ea3033%3A0x14536cdf11f1df3a!2zMi3RjyDQl9Cy0LXQvdC40LPQvtGA0L7QtNGB0LrQsNGPINGD0LsuLCAxMyDRgdGC0YDQvtC10L3QuNC1IDQxLCDQnNC-0YHQutCy0LAsINCg0L7RgdGB0LjRjywgMTIzMDIy!5e0!3m2!1sru!2sit!4v1643988845133!5m2!1sru!2sit" width="100%" height="579" style="border:0;" allowfullscreen="true" loading="lazy")

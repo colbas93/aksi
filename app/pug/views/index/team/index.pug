@@ -1,0 +1,54 @@
+block variables
+	-
+		var data = {
+			title: 'Наша команда',
+			svg: '',
+			alt: 'фотография сотрудника',
+			teamList: [
+				{
+					card: {
+						img: 'images/dist/aksi/index/team/team-1.jpg',
+						name: 'Сергей',
+						position: 'старший системный администратор',
+					}
+				},
+				{
+					card: {
+						img: 'images/dist/aksi/index/team/team-2.jpg',
+						name: 'Петр',
+						position: 'системный администратор',
+					}
+				},
+				{
+					card: {
+						img: 'images/dist/aksi/index/team/team-3.jpg',
+						name: 'Евгений',
+						position: 'специалист по сетевым технологиям',
+					}
+				},
+				{
+					card: {
+						img: 'images/dist/aksi/index/team/team-4.jpg',
+						name: 'Елена',
+						position: 'оператор тех поддержки',
+					}
+				},
+			]
+		};
+
+// Team
+section.team
+	.container
+		// Title
+		h2.s-title.team__title=data.title
+		// Slider
+		.swiper.team__slider
+			ul.swiper-wrapper.team__list
+				each item in data.teamList
+					li.swiper-slide.team__card.team-card
+						.team-card__img-wrapper
+							img(src=`${item.card.img}`, alt=`${data.alt}`)
+						p.team-card__name=item.card.name
+						p.team-card__position=item.card.position
+			.swiper-button-prev.slider__button.slider__button-prev.team__button.team__button-prev
+			.swiper-button-next.slider__button.slider__button-next.team__button.team__button-next

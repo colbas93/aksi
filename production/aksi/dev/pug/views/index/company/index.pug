@@ -1,0 +1,19 @@
+block variables
+	-
+		var data = {
+			title: 'Командная ИТ-поддержка компаний на аутсорсинге вместо штатного сотрудника',
+			companyList: ['Решаем задачи без перерывов на обед, отпуск или больничный.','Узкоспециализированные мастера с углубленными знаниями быстро находят причины и устраняют возникшие проблемы, а также ведут параллельную работу по разным направлениям.','Удобный контроль эффективности услуг благодаря ежемесячным отчетам о проделанной работе.','Аутсорсинг в 3 раза снижает затраты на поддержание ИТ-инфраструктуры в сравнении с содержанием штатного отдела техников.'],
+			image: 'images/dist/aksi/index/company/company-img.jpg',
+		};
+
+// company
+section.company
+	.container
+		// Title
+		h2.s-title.company__title=data.title
+			span.s-title__img 
+		ul.company__list
+			each list in data.companyList
+				li.company__list-item
+					p.company__list-text=list
+		img.company__img(src=`${data.image}`, alt="${data.title}")

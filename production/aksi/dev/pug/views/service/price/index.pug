@@ -1,0 +1,96 @@
+block variables
+	-
+		var data = {
+			title: 'Рассчет стоимости',
+			calculator: {
+				title: 'Калькулятор стоимости ИТ аутсорсинга для небольших офисов',
+				text1: 'Сколько у вас компьютеров?',
+				text2: 'Сколько у вас серверов?',
+				totalPrice: 'Примерная стоимость обслуживания в месяц:',
+			},
+			form: {
+				lead: 'Расчитать стоимость услуги',
+				desc: 'Расскажите о своей задаче и мы подготовим подробную смету',
+				name: 'Имя:',
+				tel: 'Телефон:',
+				task: 'Опишите свою задачу:',
+				file: 'Прикрепить файл',
+				btn: 'Отправить',
+				agreement: 'Я принимаю условия Пользовательского соглашения и даю свое согласие на обработку моих персональных данных в соответствии с Политикой конфиденциальности',
+			},
+		};
+
+// Price
+section.price
+	.container
+		// Title
+		h2.visually-hidden.price__title=data.title
+		.price__wrapper 
+
+			// Calculator
+			.price-sliders
+				h3.price-sliders__heading.block-heading=data.calculator.title
+
+				// Mobile slider
+				.price-slider__mobile
+					.price-slider__mobile-item
+						p.price-slider__mobile-lead=data.calculator.text1
+						input.price-slider__mobile-input(type="number" name="computer" value="50")
+					.price-slider__mobile-item
+						p.price-slider__mobile-lead=data.calculator.text2
+						input.price-slider__mobile-input(type="number" name="computer" value="4")
+				// Сomputer
+				.price-slider
+					p.price-slider__lead=data.calculator.text1
+					ul.price-slider__numbers
+						each num in [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+							li.price-slider__number=num
+					ul.price-slider__marks
+						each val in [ , , , , , , , , , , , , , , , , , , , , ]
+							li.price-slider__mark=val
+					.price-slider__cloud-wrapper 
+						.price-slider__cloud
+							span.price-slider__value 0 
+							span.price-slider__text шт.
+					input.price-slider__range(type="range" min="0" max="100" value="0" id="computer")
+				
+				// Server
+				.price-slider
+					p.price-slider__lead=data.calculator.text2
+					ul.price-slider__numbers
+						each num in [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+							li.price-slider__number=num
+					ul.price-slider__marks
+						each val in [ , , , , , , , , , , , , , , , , , , , , ]
+							li.price-slider__mark=val
+					.price-slider__cloud-wrapper 
+						.price-slider__cloud
+							span.price-slider__value 0 
+							span.price-slider__text шт.
+					input.price-slider__range(type="range" min="0" max="100" value="0" id="computer")
+				
+				// Total price
+				.price-sliders__total
+					p.price-sliders__total-text=data.calculator.totalPrice
+					p.price-sliders__total-cost
+						span.price-sliders__total-number 24 000
+						| ₽
+
+			// Form
+			form.price__form(enctype="multipart/form-data", method="post")
+				h3.price__form-heading.block-heading=data.form.lead
+				p.price__form-desc=data.form.desc
+
+				label.price__form-label(aria-label=`${data.form.name}`)
+					input.price__form-input.input(type="text" name="name" placeholder=`${data.form.name}` required)
+				label.price__form-label(aria-label=`${data.form.tel}`)
+					input.price__form-input.input(type="tel" name="phone" placeholder=`${data.form.tel}` required)
+				label.price__form-label(aria-label=`${data.form.task}`)
+					textarea.price__form-task.textarea(type="text" name="task" placeholder=`${data.form.task}` required)
+				label.price__form-label._icon-clip(aria-label=`${data.form.file}`)=data.form.file
+					input.price__form-file.visually-hidden(type="file" name="file" multiple)
+
+				button.button.button--yellow.price__form-button(type="submit")=data.form.btn
+
+				input.checkbox.visually-hidden(type="checkbox" name="agreement" id="agreement")
+				label.custom-checkbox.price__agreement(for="agreement")=data.form.agreement

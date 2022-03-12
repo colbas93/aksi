@@ -1,0 +1,173 @@
+block variables
+	-
+		var data = {
+			title: 'Наш блог',
+			desc: 'Статьи и аналитические материалы по теме ИТ, серверов, видео-наблюдения и пр.',
+			breadcrumbs: [
+				{
+					item: 'Главная',
+					href: 'index.html'
+				},
+				{
+					item: 'Блог',
+					href: '#'
+				}
+			],
+			filter: [
+				{
+					href: '#',
+					tab: 'Linux-сервер'
+				},
+				{
+					href: '#',
+					tab: 'ИТ-инфрастуктура'
+				},
+				{
+					href: '#',
+					tab: 'Новости ASKi'
+				},
+				{
+					href: '#',
+					tab: 'Видео-наблюдение'
+				},
+				{
+					href: '#',
+					tab: 'Новости ASKi'
+				},
+				{
+					href: '#',
+					tab: 'Видео'
+				},
+			],
+			allView: 'Показать все',
+			blogList: [
+				{
+					item: {
+						name: 'Как настроить WI-FI у себя дома',
+						desc: 'Пошаговая инструкция с иллюстрациями'
+					}
+				},
+				{
+					item: {
+						name: 'Настройка роутера на базе Debian Linux',
+						desc: 'Рассказываем как организовать безопасный выход в интернет на предприятии?'
+					}
+				},
+				{
+					item: {
+						name: 'Как настроить WI-FI у себя дома',
+						desc: 'Пошаговая инструкция с иллюстрациями'
+					}
+				},
+				{
+					item: {
+						name: 'Как настроить WI-FI у себя дома',
+						desc: 'Пошаговая инструкция с иллюстрациями'
+					}
+				},
+				{
+					item: {
+						name: 'Как настроить WI-FI у себя дома',
+						desc: 'Пошаговая инструкция с иллюстрациями'
+					}
+				},
+				{
+					item: {
+						name: 'Настройка роутера на базе Debian Linux',
+						desc: 'Рассказываем как организовать безопасный выход в интернет на предприятии?'
+					}
+				},
+				{
+					item: {
+						name: 'Как настроить WI-FI у себя дома',
+						desc: 'Пошаговая инструкция с иллюстрациями'
+					}
+				},
+				{
+					item: {
+						name: 'Настройка роутера на базе Debian Linux',
+						desc: 'Рассказываем как организовать безопасный выход в интернет на предприятии?'
+					}
+				},
+				{
+					item: {
+						name: 'Как настроить WI-FI у себя дома',
+						desc: 'Пошаговая инструкция с иллюстрациями'
+					}
+				},
+				{
+					item: {
+						name: 'Как настроить WI-FI у себя дома',
+						desc: 'Пошаговая инструкция с иллюстрациями'
+					}
+				},
+				{
+					item: {
+						name: 'Как настроить WI-FI у себя дома',
+						desc: 'Пошаговая инструкция с иллюстрациями'
+					}
+				},
+				{
+					item: {
+						name: 'Настройка роутера на базе Debian Linux',
+						desc: 'Рассказываем как организовать безопасный выход в интернет на предприятии?'
+					}
+				},
+				{
+					item: {
+						name: 'Как настроить WI-FI у себя дома',
+						desc: 'Пошаговая инструкция с иллюстрациями'
+					}
+				},
+				{
+					item: {
+						name: 'Настройка роутера на базе Debian Linux',
+						desc: 'Рассказываем как организовать безопасный выход в интернет на предприятии?'
+					}
+				},
+				{
+					item: {
+						name: 'Как настроить WI-FI у себя дома',
+						desc: 'Пошаговая инструкция с иллюстрациями'
+					}
+				},
+			]
+		};
+
+// Blog
+section.blog
+	.container
+		// breadcrumbs
+		ul.breadcrumbs
+			each i in data.breadcrumbs
+				li.breadcrumbs__item
+					a.breadcrumbs__link(href=`${i.href}`)=i.item
+		// Title
+		h2.s-title.blog__title=data.title
+		p.blog__desc=data.desc 
+
+		// Filter
+		.blog__filter.filter
+			.filter-desktop
+				ul.filter-desktop__list
+					each tab in data.filter
+						li.filter-desktop__item
+							a.filter-desktop__link.button.button--border(href=`${tab.href}`)=tab.tab
+				a.filter-desktop__allwiew._icon-arrow-blue(href="#")=data.allView
+			form.filter-mobile(action="", method="post")
+				select.filter-mobile__list.choices-menu(name="filter")
+					each f in data.filter
+						option.filter-mobile__item(value=`${f.tab}`)=f.tab
+
+		// List
+		ul.blog__list.grid-3
+			each i in data.blogList
+				li.blog__list-item.blog-item
+					.blog-item__img
+					a.blog-item__name.link--black(href="#")=i.item.name
+					p.blog-item__desc=i.item.desc
+
+		// AllView
+		.blog__allview-wrapper.tac
+			a.button.button--border.blog__allview._icon-arrow-blue=data.allView
+

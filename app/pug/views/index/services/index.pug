@@ -1,0 +1,141 @@
+block variables
+	-
+		var data = {
+			title: 'Услуги и стоимость',
+			allServices: {
+				link: 'Все услуги',
+				href: '#'
+			},
+			cards:[
+				{
+					card:
+						{
+							title: 'Обслуживание и администрирование раб. мест',
+							price: 'от 5 000 ₽/мес.',
+							about: 'Аутсорсинг компьютеров: установка оборудования, настройка программ, интернета, wi-fi, подключение принтеров, диагностика работоспособности...',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: '#',
+							img: 'images/dist/aksi/index/services/services-1.png'
+						}
+				},
+				{
+					card:
+						{
+							title: 'Настройка и обслуживание серверов',
+							price: 'от 10 000 ₽/мес.',
+							about: 'Администрирование серверов и серверных приложений, оптимизация работы оборудования, наблюдение за функционированием сетевых устройств',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: '#',
+							img: 'images/dist/aksi/index/services/services-2.png'
+						}
+				},
+				{
+					card:
+						{
+							title: 'ИТ-аудит',
+							price: 'от 5 000 ₽/мес.',
+							about: 'Экспертная оценка ИТ-инфраструктуры компании для выявления проблем в работе и роста эффективности использования ИТ-систем',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: '#',
+							img: 'images/dist/aksi/index/services/services-3.png'
+						}
+				},
+				{
+					card:
+						{
+							title: 'Организация удаленного доступа',
+							price: 'от 3 000 ₽/мес.',
+							about: 'Настройка подключения и управления несколькими компьютерами с 1 ПК',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: '#',
+							img: 'images/dist/aksi/index/services/services-4.png'
+						}
+				},
+				{
+					card:
+						{
+							title: 'Обслуживание офисной техники',
+							price: 'от 1 500 ₽/мес.',
+							about: 'Подключение принтеров и сканеров, настройка, устранение неисправностей, подмена оборудования в рамках ИТ-обслуживания компаний',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: '#',
+							img: 'images/dist/aksi/index/services/services-5.png'
+						}
+				},
+				{
+					card:
+						{
+							title: 'Администрирование 1С',
+							price: 'от 5 000 ₽/мес.',
+							about: 'Администрирование серверов и серверных приложений, оптимизация работы оборудования, наблюдение за функционированием сетевых устройств',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: '#',
+							img: 'images/dist/aksi/index/services/services-6.png'
+						}
+				},
+				{
+					card:
+						{
+							title: 'Защита компьютеров и сетей',
+							price: 'от 1 000 ₽/мес.',
+							about: 'Подбор, установка и настройка антивирусной программы, обучение сотрудников навыкам безопасной работы в интернете',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: '#',
+							img: 'images/dist/aksi/index/services/services-7.png'
+						}
+				},
+				{
+					card:
+						{
+							title: 'IP-телефония и видеонаблюдение',
+							price: 'от 3 000 ₽/мес.',
+							about: 'Проектирование, монтаж и контроль систем видеонаблюдения. Настройка единой сети телефонии, распределения и учета звонков',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: '#',
+							img: 'images/dist/aksi/index/services/services-8.png'
+						}
+				},
+				{
+					card:
+						{
+							title: 'Монтаж и настройка Wi-fi',
+							price: 'от 3 000 ₽/мес.',
+							about: 'Выберем оборудование спецаильно под параметры вашего помещения. Настроим беспроводную сеть. ',
+							button: 'Заказать',
+							link: 'Подробнее',
+							href: '#',
+							img: 'images/dist/aksi/index/services/services-9.png',
+						}
+				},	
+			]
+		};
+
+// Section
+section.services
+	.container
+		// Title
+
+		h2.s-title.services__title=data.title
+		.services__slider.swiper(data-mobile='false')
+			ul.services__list.swiper-wrapper.grid-3
+				each item in data.cards
+					li.services__slide.services-slide.swiper-slide
+						.services__item
+							.services__item-img
+								img(src=`${item.card.img}`, alt=`${item.card.title}`)
+							h3.services__item-title.sub-title=item.card.title
+							p.services__item-price.price-number=item.card.price
+							p.services__item-about=item.card.about
+							.services__item-links 
+								a.services__item-btn.button.button--border(href=`${item.card.href}`)=item.card.button
+								a.services__item-link.link--blue(href=`${item.card.href}`)=item.card.link  
+			.services__pagination.swiper-pagination
+		a.services__allview.link--blue(href=`${data.allServices.href}`)=data.allServices.link

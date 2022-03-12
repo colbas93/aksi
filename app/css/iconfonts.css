@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'icons';
+  src:  url('../fonts/aksi/iconfonts/icons.eot?eudyxp');
+  src:  url('../fonts/aksi/iconfonts/icons.eot?eudyxp#iefix') format('embedded-opentype'),
+    url('../fonts/aksi/iconfonts/icons.ttf?eudyxp') format('truetype'),
+    url('../fonts/aksi/iconfonts/icons.woff?eudyxp') format('woff'),
+    url('../fonts/aksi/iconfonts/icons.svg?eudyxp#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="_icon-"]::after, [class*=" _icon-"]::after {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-arrow-down::after {
+  content: "\e907";
+}
+._icon-arrow-blue::after {
+  content: "\e903";
+}
+._icon-arrow-right::after {
+  content: "\e904";
+}
+._icon-clip::after {
+  content: "\e905";
+}
+._icon-virus::after {
+  content: "\e906";
+}
+._icon-title-icon::after {
+  content: "\e902";
+}
+._icon-mail::after {
+  content: "\e900";
+}
+._icon-marker::after {
+  content: "\e901";
+}
+._icon-telefon::after {
+  content: "\6b";
+}

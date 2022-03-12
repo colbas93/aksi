@@ -1,0 +1,141 @@
+/* ==============================
+# Administration
+ ================================ */
+
+.administration {
+	padding-bottom: 77px;
+	@media (max-width: 768px) {
+		padding-bottom: 28px;
+	}
+	&__title {
+		margin-bottom: 16px;
+		@media (max-width: 768px) {
+			margin-bottom: 10px;
+			letter-spacing: -1px;
+		}
+	}
+	// administration about
+	&__about {
+		display: flex;
+		margin-bottom: 20px;
+		@media (max-width: 768px) {
+			display: block;
+			margin-bottom: 67px;
+
+		}
+		&-column:first-child {
+			max-width: 830px;
+			width: 100%;
+			margin-right: 39px;
+			@media (max-width: 768px) {
+				margin-bottom: 20px;
+			}
+		}
+		&-text {
+			@media (max-width: 768px) {
+				font-size: 16px;
+				line-height: 24px;
+				font-weight: 400;
+			}
+			&:first-child {
+				margin-bottom: 49px;
+				@media (max-width: 768px) {
+					margin-bottom: 30px;
+				}
+			}
+			 
+		}
+		&-img {
+			width: 337px;
+			height: auto;
+			transform: translateY(-25px);
+			@media (max-width: 768px) {
+				width: 314px;
+				height: 292px;
+				transform: translateY(0);
+			}
+		}
+	}
+	// administration features
+	&__features {
+		&-item {
+			padding-left: 23px;
+			margin-bottom: 50px;
+			position: relative;
+			@media (max-width: 768px) {
+				margin-bottom: 20px;
+			}
+			&::before {
+				content: "";
+				position: absolute;
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				background-color:$lightBlue;
+				left: 0;
+				top: 7px;
+			}
+		}
+		&-title {
+			margin-bottom: 8px;
+		}
+		&-text {
+			@media (max-width: 768px) {
+				font-size: 16px;
+				line-height: 24px;
+			}
+		}
+	}
+	// administration covid
+	&__covid {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: 768px) {
+			display: block;
+		}
+		&-column:last-child {
+			max-width: 534px;
+			width: 100%;
+			padding-top: 26px;
+			@media (max-width: 768px) {
+				padding-top: 0;
+			}
+		}
+		&-img {
+			border-radius: 10px;
+		}
+		&-note {
+			position: relative;
+			line-height: 24px;
+			font-weight: 600;
+			max-width: 639px;
+			width: 120%;
+			padding: 17px 25px 17px 98px;
+			margin-bottom: 21px;
+			background-color: #fff;
+			border: 1px solid $orange;
+			border-radius: 6px;
+			transform: translateX(-106px);
+			@media (max-width: 768px) {
+				transform: translateX(0);
+				transform: translateY(-18px);
+				width: 96%;
+				margin: 0 auto;
+			}
+		}
+		&-text:last-child {
+			margin-top: 43px;
+			@media (max-width: 768px) {
+				margin-top: 30px;
+			}
+		}
+	}
+	 
+}
+._icon-virus::after {
+	font-size: 58px;
+	position: absolute;
+	color: $orange;
+	left: 21px;
+	top: 24px;
+}

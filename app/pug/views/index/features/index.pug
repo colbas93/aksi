@@ -1,0 +1,59 @@
+block variables
+	-
+		var data = {
+			title: 'ИТ-аутсорсинг компаний в Челябинске от «AksiPro» — дарим бизнесу больше времени',
+			description: 'Делегирование технических задач профессиональной команде программистов и техников позволит максимально сконцентрироваться на выполнении профильных задач организации. ИТ-компания для обслуживания компьютеров на аутсорсе увеличивает ресурсы бизнеса. Сотрудничество с «AksiPro» — гарантия оперативного решения технических вопросов и уверенной работы информационной структуры организации',
+			featuresList: [
+				{
+					item: {
+						img: 'images/dist/aksi/index/features/features-1.svg',
+						title: 'Выгодные условия сотрудничества',
+						desc: 'Стоимость обслуживание 1 ПК — от 500 рублей. Действует программа скидок для постоянных клиентов'
+					}
+				},
+				{
+					item: {
+						img: 'images/dist/aksi/index/features/features-2.svg',
+						title: 'Оборудование на подмену',
+						desc: 'На время ремонта предоставляем в пользование аналогичную технику'
+					}
+				},
+				{
+					item: {
+						img: 'images/dist/aksi/index/features/features-3.svg',
+						title: 'Удаленное решение вопросов',
+						desc: '85% задач выполняется в онлайн-формате или по телефону. '
+					}
+				},
+				{
+					item: {
+						img: 'images/dist/aksi/index/features/features-4.svg',
+						title: 'Бесплатный аудит',
+						desc: 'После заключения договора на сотрудничество проводим бесплатный анализ ИТ-инфраструктуры компании'
+					}
+				},
+				{
+					item: {
+						img: 'images/dist/aksi/index/features/features-5.svg',
+						title: 'Онлайн-мониторинг',
+						desc: 'Круглосуточное наблюдение за функционированием серверного оборудования'
+					}
+				},
+			]
+		};
+
+// Features
+section.features
+	.container
+		// Title
+		h2.s-title.features__title=data.title
+		p.features__desc=data.description
+		ul.features__list
+			each i in data.featuresList 
+				li.features__item.features-item 
+					.features-item__border
+						.features-item__img
+							img(src=`${i.item.img}`, alt=`${i.item.title}`)
+					.features-item__text-wrapper
+						p.features-item__title=i.item.title
+						p.features-item__desc=i.item.desc

@@ -1,0 +1,122 @@
+/* ==============================
+#Blog
+ ================================ */
+
+.blog {
+	padding-bottom: 113px;
+	@media (max-width: 576px) {
+		padding-bottom: 28px;
+	}
+	&__desc {
+		margin-top: 9px;
+		margin-bottom: 38px;
+		@media (max-width: 576px) {
+			display: none;
+		}
+	}
+	// filter
+	&__filter-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 38px;
+	}
+	&__filter-list {
+		display: flex;
+	}
+	&__filter-item {
+		margin-right: 10px;
+	}
+	&__filter-link {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	&__filter-allwiew {
+		color: $lightBlue;
+	}
+	// list
+	&__list {
+		@media (max-width: 576px) {
+			overflow: hidden;
+			max-height: 1873px;
+			height: 100%;
+		}
+		&.grid-3 {
+			gap: 40px 31px;
+			@media (max-width: 576px) {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 20px 0;
+			}
+		}
+	}
+	&-item {
+		&__img {
+			width: 398px;
+			height: 248px;
+			margin-bottom: 21px;
+			border-radius: 6px;
+			@media (max-width: 576px) {
+				width: 326px;
+				height: 203px;
+				margin-bottom: 16px;
+			}
+			&:hover + .blog-item__name {
+				color: $yellow;
+				text-decoration-line: underline;
+			}
+		}
+		&__name {
+			display: block;
+			margin-bottom: 5px;
+			max-width: 300px;
+			width: 100%;
+		}
+		&__desc {
+			font-size: 16px;
+			line-height: 22px;
+			color: $black_300;
+		}
+	}
+	&-item:nth-child(1) &-item__img,
+	&-item:nth-child(5) &-item__img,
+	&-item:nth-child(7) &-item__img,
+	&-item:nth-child(11) &-item__img,
+	&-item:nth-child(13) &-item__img {
+		background: url(../images/dist/aksi/blog/image-1.jpg) no-repeat
+			center/contain;
+	}
+	&-item:nth-child(2) &-item__img,
+	&-item:nth-child(6) &-item__img,
+	&-item:nth-child(8) &-item__img,
+	&-item:nth-child(12) &-item__img,
+	&-item:nth-child(14) &-item__img {
+		background: url(../images/dist/aksi/blog/image-2.jpg) no-repeat
+			center/contain;
+	}
+	&-item:nth-child(3) &-item__img,
+	&-item:nth-child(4) &-item__img,
+	&-item:nth-child(9) &-item__img,
+	&-item:nth-child(10) &-item__img,
+	&-item:nth-child(15) &-item__img {
+		background: url(../images/dist/aksi/blog/image-3.jpg) no-repeat
+			center/contain;
+	}
+	// allview
+	&__allview-wrapper {
+		padding-top: 61px;
+		@media (max-width: 576px) {
+			padding-top: 28px;
+		}
+	}
+	&__allview {
+		padding: 10px 67px;
+		font-weight: 500;
+		color: $lightBlue;
+	}
+}
+._icon-arrow-blue::after {
+	margin-left: 5px;
+	color: $lightBlue;
+	font-size: 13px;
+}

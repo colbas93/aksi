@@ -1,0 +1,24 @@
+block variables
+	-
+		var data = {
+			title: 'Профессиональный ИТ-аутсорсинг в Челябинске',
+			subTitle: 'Берем на себя ответственность за состояние и работоспособность сети, серверов, компьютеров и офисной техники',
+			costBtn: 'Расчет стоимости',
+			text: 'Выполняем техническое обслуживание компаний — от установки компьютеров до закупки оборудования и прокладки сети. Вместо 1 системного администратора в штате — коллектив из 5 программистов, 3 техников и 4 менеджеров-консультантов. Команда справляется с поставленной задачей в 3 раза быстрее, чем администратор, работающий в одиночку.',
+			img: 'images/dist/aksi/index/intro/image.png'
+		};
+
+// Intro
+section.intro
+	.intro__wrapper
+		.intro__figure
+	.intro__content.container
+		.intro__about
+			h2.intro__title=data.title
+			p.intro__sub-title=data.subTitle
+			a.button.button--yellow(href="#")=data.costBtn
+			//- image
+			img.intro__img(src=`${data.img}`, alt=`${data.title}`)
+		.intro__description
+			p.intro__description-text=data.text
+		

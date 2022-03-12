@@ -1,0 +1,120 @@
+/* ==============================
+#Company
+ ================================ */
+
+ .company {
+	background: $gradient;
+	width: 100%;
+	color: $white;
+	position: relative;
+	padding-top: 89px;
+	padding-bottom: 61px;
+	@media (max-width: 1262px) {
+		padding-bottom: 0;
+	}
+	@media (max-width: 769px) {
+		padding-top: 34px;
+	}
+	// plus
+	&::before, &::after {
+		content: '';
+		position: absolute;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+	// left plus
+	&::before {
+		background-image: url(../images/dist/aksi/index/company/company-plus-left.svg);
+		width: 303px;
+		height: 184px;
+		left: 0;
+		bottom: -40px;
+	}
+	// right plus
+	&::after {
+		background-image: url(../images/dist/aksi/index/company/company-plus-right.svg);
+		max-width: 506px;
+		width: 100%;
+		height: 307px;
+		right: 0;
+		top: 55px;
+		z-index: 11;
+		@media (max-width: 768px) {
+			max-width: 179px;
+			width: 100%;
+			height: 108px;
+			top: 26px;
+		}
+	}
+	// title
+	&__title {
+		max-width: 996px;
+		width: 100%;
+		@media (max-width: 768px) {
+			font-size: 30px;
+			line-height: 36px;
+			&::after {
+				content: none;
+			}
+		}
+	}
+	//  List
+	&__list {
+		max-width: 470px;
+		margin-right: 106px;
+		padding-top: 56px;
+		@media (max-width: 762px) {
+			margin-right: 0;
+			padding-top: 27px;
+		}
+		&-item {
+			&:not(:last-child) {
+				margin-bottom: 38px;
+				@media (max-width: 768px) {
+					margin-bottom: 31px;
+				}
+			}
+			width: 100%;
+			padding-left: 35px;
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				background: url(../images/dist/aksi/svg/check-mark.svg);
+				width: 22px;
+				height: 16px;
+				left: 0;
+				top: 8px;
+			}
+		}
+		&-text {
+			line-height: 25px;
+			@media (max-width: 768px) {
+				font-size: 14px;
+				line-height: 19px;
+			}
+		}
+	}
+	// img
+	&__img {
+		display: block;
+		position: absolute;
+		width: 50%;
+		max-width: 1015px;
+		bottom: -90px;
+		right: 0;
+		z-index: 10;
+		border-radius: 6px;
+		filter: drop-shadow(0px 25px 20px rgba(0, 0, 0, 0.15));
+		@media (max-width: 1262px) {
+			position: relative;
+			bottom: -20px;
+			min-width: 70%;
+			
+		}
+		@media (max-width: 768px) {
+			min-width: 330px;
+			width: 100%;
+		}
+	}
+ }

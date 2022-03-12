@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <!-- Title-->
+    <title>Aksi - Контакты</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/png" href="images/dist/sample/favicon.png">
+    <!-- Styles-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/app.min.css">
+    <link rel="stylesheet" href="css/iconfonts.css">
+  </head>
+  <body class="page__body">
+    <div class="page__wrapper">
+      <!-- Header-->
+      <header class="header">
+        <div class="container">
+          <!-- Navigation-->
+          <nav class="header__nav">
+            <!-- Logo--><a class="header__logo" href="#"><img src="images/dist/aksi/index/header/logo.png" alt="Logo Aksi"></a>
+            <!-- Burger-->
+            <button class="burger header__burger" aria-label="Menu"><span class="burger__line"></span></button>
+            <!-- Menu-->
+            <div class="header__menu"> 
+              <ul class="header__list header-list">
+                <li class="header-list__item"><a class="header-list__link" href="#">Компания</a></li>
+                <li class="header-list__item"><a class="header-list__link" href="services.html">Услуги и цены</a></li>
+                <li class="header-list__item"><a class="header-list__link" href="catalog.html">ИТ-аутсорсинг</a></li>
+                <li class="header-list__item"><a class="header-list__link" href="blog.html">Блог</a></li>
+                <li class="header-list__item"><a class="header-list__link" href="contacts.html">Контакты</a></li>
+              </ul><a class="header__support link--yellow" href="#">
+                <svg width="22" height="22">
+                  <use xlink:href="images/dist/aksi/sprite.svg#question"></use>
+                </svg>Задать вопрос</a>
+              <p class="header__contact header-contact"><span class="header-contact__text">Бесплатный аудит</span><a class="header-contact__tel" href="tel:+73513453456">+7 (351) 345 34 56</a></p>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- Main-->
+      <main class="page__main">
+        <div class="container">
+          <!-- Contacts-->
+          <section class="contacts">
+            <!-- breadcrumbs-->
+            <ul class="breadcrumbs">
+              <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Главная</a></li>
+              <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Контакты</a></li>
+            </ul>
+            <!-- Title-->
+            <h2 class="s-title contacts__title">Контакты</h2>
+            <!-- contacts-->
+            <ul class="contacts__list">
+              <!-- column-->
+              <li class="contacts__column"><span class="contacts__column-icon _icon-marker"></span><a class="contacts__address" href="#">123022, г. Москва, 2-ая Звенигородская, дом 13, строение 41, 7 этаж</a><a class="contacts__requisites contacts-requisites" href="#">
+                  <p class="contacts-requisites__icon">PDF</p>
+                  <p class="contacts-requisites__text">Реквизиты компании</p></a></li>
+              <!-- column-->
+              <li class="contacts__column"><span class="contacts__column-icon _icon-telefon"> </span>
+                <ul class="contact__phone-list phone-list">
+                  <li class="phone-list__item"> <a class="phone-list__number" href="tel:+74951910798">+7 (495) 191-07-98</a>
+                    <p class="phone-list__desc">По вопросам ИТ обслуживания</p>
+                  </li>
+                  <li class="phone-list__item"> <a class="phone-list__number" href="tel:+88005555151">8 800 555-51-51</a>
+                    <p class="phone-list__desc">Бесплатный телефон для регионов</p>
+                  </li>
+                </ul>
+              </li>
+              <!-- column-->
+              <li class="contacts__column"><span class="contacts__column-icon _icon-mail"> </span><a class="contacts__mail" href="#">outsource@alp-itsm.ru</a>
+                <ul class="contacts__social">
+                  <li class="contacts__social-item"> <a class="contacts__social-link" href="#"></a></li>
+                  <li class="contacts__social-item"> <a class="contacts__social-link" href="#"></a></li>
+                  <li class="contacts__social-item"> <a class="contacts__social-link" href="#"></a></li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <!-- Map-->
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.8396942588474!2d37.550477916046574!3d55.76128689880488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54b4b55ea3033%3A0x14536cdf11f1df3a!2zMi3RjyDQl9Cy0LXQvdC40LPQvtGA0L7QtNGB0LrQsNGPINGD0LsuLCAxMyDRgdGC0YDQvtC10L3QuNC1IDQxLCDQnNC-0YHQutCy0LAsINCg0L7RgdGB0LjRjywgMTIzMDIy!5e0!3m2!1sru!2sit!4v1643988845133!5m2!1sru!2sit" width="100%" height="579" style="border:0;" allowfullscreen="true" loading="lazy"></iframe>
+        </div>
+      </main>
+      <!-- Footer-->
+      <footer class="footer">
+        <section class="footer-top">
+          <div class="container">
+            <p class="footer-top__lead tac">Получите <span>бесплатную</span> консультацию</p>
+            <p class="footer-top__text tac">Перезвоним через несколько минут и ответим на ваши вопросы</p>
+            <form class="footer-top__form footer-form form" action="#" method="POST">
+              <label class="footer-form__label" aria-label="Имя:">
+                <input class="footer-form__input input" type="text" name="name" placeholder="Имя:" required>
+              </label>
+              <label class="footer-form__label" aria-label="Телефон:">
+                <input class="footer-form__input input" type="tel" name="phone" placeholder="Телефон:" required>
+              </label>
+              <button class="button button--yellow footer-form__button" type="submit">Отправить</button>
+              <input class="checkbox visually-hidden" type="checkbox" name="agreement" id="agreement">
+              <label class="custom-checkbox" for="agreement">Я принимаю условия Пользовательского соглашения и даю свое согласие на обработку моих персональных данных в соответствии с Политикой конфиденциальности</label>
+            </form>
+          </div>
+        </section>
+        <section class="footer-bottom">
+          <div class="container">
+            <div class="footer-bottom__grid">
+              <ul class="footer-bottom__list">
+                <li class="footer-bottom__item"><a class="footer-bottom__link" href="$(menuItem.href)">Обслуживание и администрирование рабочих мест</a></li>
+                <li class="footer-bottom__item"><a class="footer-bottom__link" href="$(menuItem.href)">Настройка и обслуживание серверов</a></li>
+                <li class="footer-bottom__item"><a class="footer-bottom__link" href="$(menuItem.href)">ИТ-аудит</a></li>
+              </ul>
+              <ul class="footer-bottom__list">
+                <li class="footer-bottom__item"><a class="footer-bottom__link" href="$(menuItem.href)">Организация удаленного доступа</a></li>
+                <li class="footer-bottom__item"><a class="footer-bottom__link" href="$(menuItem.href)">Обслуживание офисной техники</a></li>
+                <li class="footer-bottom__item"><a class="footer-bottom__link" href="$(menuItem.href)">Администрирование 1С</a></li>
+              </ul>
+              <ul class="footer-bottom__list">
+                <li class="footer-bottom__item"><a class="footer-bottom__link" href="$(menuItem.href)">Защита компьютеров и сетей</a></li>
+                <li class="footer-bottom__item"><a class="footer-bottom__link" href="$(menuItem.href)">IP-телефония и видеонаблюдение</a></li>
+                <li class="footer-bottom__item"><a class="footer-bottom__link" href="$(menuItem.href)">Монтаж и настройка wi-fi</a></li>
+              </ul>
+              <div class="footer-bottom__copyright copyright"><a class="logo footer-bottom__logo" href="#"><img class="logo__img" src="images/dist/aksi/index/header/logo.png" alt="Logo Aksi"></a>
+                <p class="copyright__date">2016 - 2021 © AKSi</p>
+                <ul class="copyright__list"> 
+                  <li class="copyright__item"><a class="copyright__link link--yellow" href="#">Политика конфиденциальности </a></li>
+                  <li class="copyright__item"><a class="copyright__link link--yellow" href="#">Пользовательское соглашение</a></li>
+                </ul>
+              </div>
+              <ul class="footer-bottom__nav footer__nav">
+                <li class="footer__nav-item"><a class="footer__nav-link" href="#">Компания</a></li>
+                <li class="footer__nav-item"><a class="footer__nav-link" href="#">Услуги и цены</a></li>
+                <li class="footer__nav-item"><a class="footer__nav-link" href="#">Блог</a></li>
+                <li class="footer__nav-item"><a class="footer__nav-link" href="#">Отзывы</a></li>
+                <li class="footer__nav-item"><a class="footer__nav-link" href="#">Контакты</a></li>
+              </ul>
+              <div class="footer-bottom__contact contact"> 
+                <p class="contact__text">Бесплатный аудит</p><a class="contact__tel" href="#" tel="tel:+73513453456">+7 (351) 345 34 56</a><a class="contact__link" href="#">Пишите в WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </footer>
+    </div>
+    <!-- Scripts-->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="js/app.min.js"></script>
+  </body>
+</html>

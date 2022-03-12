@@ -1,0 +1,50 @@
+block variables
+	-
+		var data = {
+			title: 'Наши проекты',
+			text: 'Мы гордимся каждым реализованным проектом. Здесь мы приводим часть из них.',
+			list: [
+				{
+					item: {
+						img: 'images/dist/aksi/service/projects/image-1.jpg',
+						title: 'Уральский трубный завод',
+						desc: 'Установка и настройка системы видео-наблюдения'
+					}
+				},
+				{
+					item: {
+						img: 'images/dist/aksi/service/projects/image-1.jpg',
+						title: 'Уральский трубный завод',
+						desc: 'Установка и настройка системы видео-наблюдения'
+					}
+				},
+				{
+					item: {
+						img: 'images/dist/aksi/service/projects/image-2.jpg',
+						title: 'Уральский трубный завод',
+						desc: 'Установка и настройка системы видео-наблюдения'
+					}
+				},
+			],
+			allView: 'Все проекты',
+		};
+
+// Section
+section.projects
+	.container
+		// Title
+		h2.projects__heading.block-heading=data.title
+		p.projects__text=data.text
+		// List
+		.projects__slider.swiper
+			ul.projects__list.swiper-wrapper
+				each i in data.list
+					li.projects__item.swiper-slide
+						a.projects__item-img
+							img(src=`${i.item.img}` alt=`${i.item.title}`)
+						a.projects__item-title.link--black=i.item.title
+						p.projects__item-desc=i.item.desc
+			.swiper-button-prev.projects__button.projects__button-prev.slider__button.slider__button-prev
+			.swiper-button-next.projects__button.projects__button-next.slider__button.slider__button-next
+		// AllView
+		a.projects__allview.link--blue.button.button--border._icon-arrow-right(href=`#`)=data.allView
